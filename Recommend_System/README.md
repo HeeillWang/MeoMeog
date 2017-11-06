@@ -7,6 +7,8 @@ weather : char (defined by macro)
 temperature : char
 time : int 
 location : (float,float)
+gender는 M, F(남성, 여성으로 표현)
+나이는 int;
 )
 
 
@@ -31,4 +33,4 @@ string of 3-top-recommended rest.
 feedbacked user preference
 )
 
-
+음식 종류는 설문 순서대로 0에서 11까지로 매핑
