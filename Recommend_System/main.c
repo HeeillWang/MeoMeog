@@ -2,6 +2,8 @@
 #include <time.h>
 #include <string.h>
 #include <stdlib.h>
+#include <math.h>
+
 #define NUM_OF_RESTAURANT 100
 
 typedef enum bool {false, true} bool;
@@ -10,7 +12,7 @@ typedef enum weather {sunny, rainy, cloudy} weather; // add more weather
 typedef struct location {
     float latitude;
     float longitude;
-} loaction;
+} Location;
 
 typedef struct inputData {
     struct location currentLocation;
@@ -23,7 +25,7 @@ typedef struct inputData {
     float rangePrefernece;
     bool gender;
     char weather;
-} inputData;
+} InputData;
 
 typedef struct restaurant {
     char name[100];
@@ -31,18 +33,35 @@ typedef struct restaurant {
     float grade;
     float result;
     char kind;
-} restaurant; // can change how to implement it.
+	float distance;	//distance btn current location, will be calculated
+} Restaurant; // can change how to implement it.
 
-void recommend(int *resNum, inputData _data, restaurant *_rest);
+void calc_distance(Restaurant arr[], int len, Location cur_loc) {
+	int i;
+
+	for (i = 0; i < NUM_OF_RESTAURANT; i++)
+		arr[i].distance = sqrt((cur_loc.latitude - arr[i].resLoc.latitude) * (cur_loc.latitude - arr[i].resLoc.latitude) + 
+		(cur_loc.longitude - arr[i].resLoc.longitude) * (cur_loc.longitude - arr[i].resLoc.longitude));
+
+	return;
+}
+
+void recommend(int *resNum, InputData _data, Restaurant *_rest);
 
 int main(int argc, const char * argv[]) {
     FILE *fp;
-    fp = fopen("/Users/imola/MeoMeog/Recommend_System/Sample_User_Input.csv", "r"); // change directory properly
+	Restaurant arr[NUM_OF_RESTAURANT];
+	char temp = 0;
+	InputData input;
+
+	char buffer[100];
+	int cnt = 0;
+	int result[3];
+
+    fp = fopen("Sample_User_Input.csv", "r"); // change directory properly
     if (fp == NULL) {
         return 1;
     }
-    char temp = 0;
-    inputData input;
     
     fscanf(fp, "%c", &temp);
     switch (temp) {
@@ -74,7 +93,7 @@ int main(int argc, const char * argv[]) {
     
     fclose(fp);
     
-    fopen("/Users/imola/MeoMeog/Recommend_System/Sample_Current_Data.csv", "r"); // change directory properly
+    fopen("Sample_Current_Data.csv", "r"); // change directory properly
     if (fp == NULL) {
         return 1;
     }
@@ -91,15 +110,12 @@ int main(int argc, const char * argv[]) {
     
     fclose(fp);
     
-    restaurant arr[NUM_OF_RESTAURANT];
-    fopen("/Users/imola/MeoMeog/Recommend_System/Sample_Restaurant.csv", "r");
+    fopen("Sample_Restaurant.csv", "r");
     if (fp == NULL) {
         return 1;
     }
     
-    char buffer[100];
-    int cnt = 0;
-    
+	cnt = 0;
     while (!feof(fp)) {
         fgets(buffer, 100, fp);
         strcpy(arr[cnt].name, strtok(buffer, ","));
@@ -115,13 +131,13 @@ int main(int argc, const char * argv[]) {
     
     fclose(fp);
     
-    int result[3];
     
+	calc_distance(arr, cnt, input.currentLocation);
     recommend(result, input, arr);
     
     return 0;
 }
 
-void recommend(int *resNum, inputData _data, restaurant *_rest) {
+void recommend(int *resNum, InputData _data, Restaurant *_rest) {
     return; // fill this function
 }
