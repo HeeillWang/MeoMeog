@@ -11,7 +11,7 @@ size_test = data.shape[0] - size_train
 np.random.shuffle(data)
 
 #Normalize
-data[0:][16] *= scale_factor / np.max(np.abs(data),axis=0)
+data[0:][16] *= scale_factor / np.max(np.abs(data[0:][16]),axis=0)
 
 #Save test data
 np.savetxt("test_data.csv", data[0:size_test], delimiter=",", fmt="%f")

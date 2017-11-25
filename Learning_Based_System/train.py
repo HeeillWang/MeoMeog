@@ -20,11 +20,11 @@ xy = tf.decode_csv(value, record_defaults=record_defaults)
 num_input = 18
 num_output = 20
 batch_size = 250
-learning_rate = 0.0005
-training_epochs = 10
-layer1 = 100
-layer2 = 100
-layer3 = 50
+learning_rate = 0.0001
+training_epochs = 100
+layer1 = 200
+layer2 = 200
+layer3 = 200
 # dropout (keep_prob) rate  0.7 on training, but should be 1 for testing
 
 
@@ -96,8 +96,9 @@ for epoch in range(training_epochs):
         feed_dict = {X: batch_xs, Y: batch_ys}
         c, _ = sess.run([cost, optimizer], feed_dict=feed_dict)
         avg_cost += c / total_batch
-
-    print('Epoch:', '%04d' % (epoch + 1), 'cost =', '{:.9f}'.format(avg_cost))
+   
+    if(epoch % 10 == 0):
+        print('Epoch:', '%04d' % (epoch + 1), 'cost =', '{:.9f}'.format(avg_cost))
 
 # Save the variables to disk.
 save_path = saver.save(sess, "./saved/saved_model.ckpt")
