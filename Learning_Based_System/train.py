@@ -13,13 +13,13 @@ key, value = reader.read(filename_queue)
 
 # Default values, in case of empty columns. Also specifies the type of the
 # decoded result.
-record_defaults = [[0.], [0.], [0.], [0.], [0.],[0.],[0.],[0.],[0.],[0.]]
+record_defaults = [[0.], [0.], [0.], [0.], [0.],[0.],[0.],[0.],[0.],[0.], [0.], [0.], [0.], [0.], [0.],[0.],[0.],[0.], [0.]]
 xy = tf.decode_csv(value, record_defaults=record_defaults)
 
 # Basic parameters
-num_input = 9
-num_output = 2
-batch_size = 100
+num_input = 18
+num_output = 20
+batch_size = 250
 learning_rate = 0.0005
 training_epochs = 10
 layer1 = 100
