@@ -1,3 +1,5 @@
+import  numpy as np
+
 #preference of food
 #this class will be part of class userInput
 class preference:
@@ -48,11 +50,39 @@ class restInfo:
         self.endTime = endTime
 
     # it calculate square of distance
-    # notice that it does not do square root opeartion
+    # notice that it does not do square root operation
     def setDistance(self, cur_latitude, cur_longitude):
         self.distance = (cur_latitude - self.latitude) * (cur_latitude - self.latitude) + (cur_longitude - self.longitude) * (cur_longitude - self.longitude)
+
+    # weights is list of weight about this restaurant.
+    # for example : weight for distance, weight for preference of category... etc.
+    # it might be more efficient to use dictionary not a list.
+    def setWeight(self, weights):
+        self.weight = weights
+
 
 
 # parse data(from server) -> to our class(preference, userInput, curInput, restInfo)
 # if might be not needed
 # class parseToClass:
+
+
+
+# argument : list of 'restInfo' objects.
+# load weights from csv file and then save it to restInfo
+# it must ensure that order of restaurants are same.
+# returns : list of 'restInfo' objects.
+def loadWeightAndSaveToRest(rest_arr):
+    # skip first row
+    data = np.loadtxt("weight.csv", delimiter=",", dtype=np.float32, skiprows=1)
+
+    # need to inspect this part : "how to define weights? on each restaurants or globally?"
+    #for i in range(1, data.size):
+    #    rest_arr[i].setWeight(data[i])
+
+    return rest_arr
+
+
+# need to write this method
+def getRecommRest(usrinfo, date, restinfo):
+    print('nothing yet')
