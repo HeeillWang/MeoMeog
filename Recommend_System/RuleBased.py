@@ -140,7 +140,7 @@ def loadWeightAndSaveToRest(rest_arr):
 def getRecommRest(preference, usrinfo, curinfo, rest_arr):
     # set distance
     for rest in rest_arr:
-        rest.setDistance(curinfo.getPosition())
+        rest.setDistance(curinfo.getPosition(), 0)
 
     # distance normalize
     minDist = rest_arr[0].getDistance()
