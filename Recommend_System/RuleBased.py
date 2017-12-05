@@ -152,10 +152,13 @@ def loadWeightAndSaveToRest(rest_arr):
 # need to write this method
 # call next this function. distance setting contain this function
 # return output vector
-def getRecommRest(preference, usrinfo, curinfo, rest_arr):
+def getRecommRest(usrinfo, curinfo, rest_arr):
     # set distance
     for rest in rest_arr:
         rest.setDistance(curinfo.getPosition(), 0)
+
+
+    preference = usrinfo.preference
 
     # distance normalize
     minDist = rest_arr[0].getDistance()
@@ -175,7 +178,9 @@ def getRecommRest(preference, usrinfo, curinfo, rest_arr):
         rest.addScore(rest.getWeight()[rest.getCategory()] * preference.getPreference(rest.getCategory()))
         rest.addScore(rest.getWeight()[12] * rest.getUserRate())
         rest.addScore(rest.getWeight()[13] * rest.getGlobalRate())
-        rest.addScore(rest.getWeight()[14] * rest.getDistance())
+        
+        # changed this line, need inspection later
+        rest.addScore(rest.getWeight()[14] * rest.getDistance() * (1-usrinfo.pref_for_distance))
         # weather
         # time
         # temperature
