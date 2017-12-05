@@ -178,7 +178,7 @@ def getRecommRest(usrinfo, curinfo, rest_arr):
         rest.addScore(rest.getWeight()[rest.getCategory()] * preference.getPreference(rest.getCategory()))
         rest.addScore(rest.getWeight()[12] * rest.getUserRate())
         rest.addScore(rest.getWeight()[13] * rest.getGlobalRate())
-        
+
         # changed this line, need inspection later
         rest.addScore(rest.getWeight()[14] * rest.getDistance() * (1-usrinfo.pref_for_distance))
         # weather
@@ -189,6 +189,16 @@ def getRecommRest(usrinfo, curinfo, rest_arr):
             rest.setScore(-1)
 
     return rest_arr
+
+def accuraccy_test(rest_info):
+    data = np.loadtxt("weight.csv", delimiter=",", dtype=None)
+
+    for i in range(data.size):
+        user_input, cur_input, _ = parse(data[i][0:16], data[i][16:21], [])
+
+    result = getRecommRest(user_input, cur_input, rest_info)
+
+
 
 if __name__ == "__main__":
     print("test")
