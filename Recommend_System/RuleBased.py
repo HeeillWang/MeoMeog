@@ -187,7 +187,7 @@ def getRecommRest(usrinfo, curinfo, rest_arr):
         # time
         # temperature
         # if out of service time, flush that restaurant's score -1
-        if (curinfo.gettime() < rest.getTime()[0]) or (curinfo.gettime() > rest.getTime()[1]):
+        if (curinfo.getTime() < rest.getTime()[0]) or (curinfo.getTime() > rest.getTime()[1]):
             rest.setScore(-1)
 
     return rest_arr
@@ -204,7 +204,15 @@ def accuraccy_test(rest_info):
 
 if __name__ == "__main__":
     # test code
-    user = userInput(1, 21, 4, 4, 5, 3, 5, 4, 3, 5, 5, 4, 5, 2, 2, 4)
-    #cur = curInput(1544, 0, )
+    pref = preference(4, 4, 5, 3, 5, 4, 3, 5, 5, 4, 5, 2)
+    user = userInput(1, 21, pref, 2, 4)
+    cur = curInput(1544, 0, 37.293959, 126.974855)
+    rest = []
+    rest.append(restInfo("bonzzi", 4, 37.297195, 126.971490, 4.6, 3.0, 1100, 2100))
+    rest.append(restInfo("bongusbapbugger", 5, 37.297716, 126.973346, 4.0, 3.0, 1100, 2100))
 
-    print("test")
+    loadWeightAndSaveToRest(rest)
+    getRecommRest(user, cur, rest)
+
+    for restaurant in rest:
+        print(restaurant.getScore())
