@@ -126,90 +126,39 @@ class MyHandler(BaseHTTPRequestHandler):
             restinfo.append(tmp)
             
         if DEBUG:
+            print ("restinfo")
             print restinfo
         
         usr_parse, cur_parse, rest_parse = RuleBased.parse(usr_input, cur_input, restinfo)
         
         if DEBUG:
+            print ("Parsing Data...")
             print usr_parse
             print cur_parse
             print rest_parse
-            
+        
+        RuleBased.loadWeightAndSaveToRest(rest_parse)
         restarr = RuleBased.getRecommRest(usr_parse, cur_parse, rest_parse)
+        
         if DEBUG:
+            print ("Recommened Restaurant")
             print restarr
+        
+        restdict = {}
+        rank = []
+        for item in restarr:
+            tmp = {}
+            tmp[item.name] = item.getScore()
+            rank.append(tmp)
             
-        self.wfile.write(str(restarr))
+        restdict['rank'] = rank
+        resultStr = json.dumps(restdict)
         
-    def do_GET(self):
-        spath = self.path[1:]
-        
-        pathinfo = spath.split('?')[0]
-        
-        print pathinfo
-        
-        # Do something
-        # Make proper output with json format and write it into 'wfile'
-        self._set_header()
-        
-        """
-        # get GET responses & parse it 
-        # {"soup":3,"chicken":3,"gender":"M","ch":3,"pref_dist":4
-        # "jp":3,"pref_new_rest":4,"kr":3,"noodle":3,"long":36.24
-        # "fast":3,"pizza":3,"flour":3,"meat":3,"sashimi":3,"western":3,"age":25,"lat":126.1234}
-        data = parse_qs(self.path[1:].split('?')[1])
-        gender = data['gender']
-        ch = data['ch']
-        soup = data['soup']
-        chicken = data['chicken']
-        pref_dist = data['pref_dist']
-        jp = data['jp']
-        pref_new_rest = data['pref_new__rest']
-        kr = data['kr']
-        noodle = data['noodle']
-        longitute = data['long']
-        fast = data['fast']
-        pizza = data['pizza']
-        flour = data['flour']
-        meat = data['meat']
-        sashimi = data['sashimi']
-        western= data['western']
-        age = data['age']
-        latitute = data['lat']
-        """
-        
-        # get current local time of server
-        now = time.localtime()
-        date = "%d:%d:%d" % (now.tm_hour, now.tm_min, now.tm_sec)
         if DEBUG:
-            print date
-        
-        # get restaurant information from database
-        cur.execute("SELECT * FROM RestInfo")           # Send QUERY
-        
-        # Get result and put it into dictionary variable
-        # 7 globalRate 8 userRate 9 startTime 10 endTime
-        restinfo = []
-        for row in cur.fetchall():
-            tmp = dict()
-            tmp['id'] = row[0]
-            tmp['name'] = row[1]
-            tmp['category'] = row[11]
-            tmp['lat'] = row[2]
-            tmp['long'] = row[3]
-            tmp['rating'] = row[4]
-            tmp['globalRate'] = row[7]
-            tmp['userRate'] = row[8]
-            tmp['startTime'] = row[9]
-            tmp['endTime'] = row[10]
-
-            restinfo.append(tmp)
-        if DEBUG:
-            print restinfo
-        
-        # usrinfo = data
-        # RuleBased.getRecommRest(usrinfo, date, restinfo)
-        self.wfile.write("Rule Based Algorithm")
+            print "Result String"
+            print resultStr
+                
+        self.wfile.write(str(resultStr))
 
 if __name__ == '__main__':
 
