@@ -190,18 +190,19 @@ def getRecommRest(usrinfo, curinfo, rest_arr):
         if (curinfo.getTime() < rest.getTime()[0]) or (curinfo.getTime() > rest.getTime()[1]):
             rest.setScore(-1)
 
-    return rest_arr
+    sorted(rest_arr, key=lambda restInfo:restInfo.score)
+    return rest_arr[0:3]
 
 def accuraccy_test(rest_info):
-    data = np.loadtxt("survey.csv", delimiter=",", dtype=np.float32)
-    ret = []
+    f = open('survey.csv', 'r', encoding='utf-8')
+    np.loadtxt(f, delimiter=',',dtype=None)
 
-    for i in range(data.size):
-        user_input, cur_input, _ = parse(data[i][0:16], data[i][16:21], [])
-        result = getRecommRest(user_input, cur_input, rest_info)
-        ret.append(result)
 
-    return ret
+#    for i in range(data.size):
+ #       user_input, cur_input, _ = parse(data[i][0:16], data[i][16:21], [])
+  #      result = getRecommRest(user_input, cur_input, rest_info)
+
+
 
 
 
