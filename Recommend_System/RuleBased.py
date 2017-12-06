@@ -114,6 +114,7 @@ class restInfo:
         return (self.startTime, self.endTime)
 
 
+
 # parse data(from server) -> to our class(preference, userInput, curInput, restInfo)
 # argument
 # user_input : list
@@ -124,8 +125,8 @@ def parse(user_input, cur_info, rest_info):
     user = userInput(user_input[0], user_input[1], pref, user_input[14], user_input[15])
     cur = curInput(cur_info[0], cur_info[1], cur_info[2], cur_info[3])
     rest = []
-    #name, category, latitude, longitude, globalRate, userRate, startTime, endTime
 
+    #name, category, latitude, longitude, globalRate, userRate, startTime, endTime
     for i in range(len(rest_info)):
         rest.append(restInfo(rest_info[i]['name'], rest_info[i]['category'], rest_info[i]['latitude'], rest_info[i]['longitude'], rest_info[i]['globalRate'], rest_info[i]['userRate'], rest_info[i]['startTime'], rest_info[i]['endTime']))
 
@@ -192,27 +193,48 @@ def getRecommRest(usrinfo, curinfo, rest_arr):
             rest.setScore(-1)
 
     sorted(rest_arr, key=lambda restInfo:restInfo.score)
+
     return rest_arr[0:3]
 
-def accuraccy_test(rest_info):
+
+
+def init_score(rest_arr):
+    for i in range(len(rest_arr)):
+        rest_arr[i].setScore(0)
+
+def accuraccy_test(rest_arr):
     data = np.loadtxt('survey.csv', delimiter=',',dtype=np.float32)
 
-    correct = 0
+    correct_y = 0 # no. of correct 'yes'
+    correct_n = 0 # no. of correct 'no'
+    count_y = 0 # counter for yes
+    count_n = 0 # counter for no
 
-'''
-    for i in range(data.size):
+    for i in range(2):
         user_input, cur_input, _ = parse(data[i][0:16], data[i][16:21], [])
-        result = getRecommRest(user_input, cur_input, rest_info)
+
+        init_score(rest_arr)
+        result = getRecommRest(user_input, cur_input, rest_arr)
         ans = data[i][21]
-        
 
-        for j in range(len(result)):
-            if(ans == result[j].name):
-                correct += 1
-                
-'''
+        if(data[i][22] == 1):
+            # survey respond is 'yes'
+            for j in range(len(result)):
+                count_y += 1
+                if (ans == result[j].name):
+                    correct_y += 1
+        else:
+            # survey respond is 'no'
+            for j in range(len(result)):
+                count_n += 1
+                if (ans == result[j].name):
+                    break;
 
-    #print("Correct : ", correct, " / total : ", data.size)
+            if(j == len(result)):
+                correct_n += 1
+
+    print("[yes] Correct : ", correct_y, " / total : ", count_y)
+    print("[no] Correct : ", correct_n, " / total : ", count_n)
 
 
 
