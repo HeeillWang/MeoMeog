@@ -24,7 +24,7 @@ weather_mapping = {"clear sky": 0,
                    "snow": 3,
                    "mist": 1 }
 
-ADDR = ""
+ADDR = "10.0.2.15"
 PORT = 9999
 class MyHandler(BaseHTTPRequestHandler):
     def _set_header(self):
