@@ -193,12 +193,15 @@ def getRecommRest(usrinfo, curinfo, rest_arr):
     return rest_arr
 
 def accuraccy_test(rest_info):
-    data = np.loadtxt("weight.csv", delimiter=",", dtype=None)
+    data = np.loadtxt("survey.csv", delimiter=",", dtype=np.float32)
+    ret = []
 
     for i in range(data.size):
         user_input, cur_input, _ = parse(data[i][0:16], data[i][16:21], [])
+        result = getRecommRest(user_input, cur_input, rest_info)
+        ret.append(result)
 
-    result = getRecommRest(user_input, cur_input, rest_info)
+    return ret
 
 
 
@@ -212,7 +215,8 @@ if __name__ == "__main__":
     rest.append(restInfo("bongusbapbugger", 5, 37.297716, 126.973346, 4.0, 3.0, 1100, 2100))
 
     loadWeightAndSaveToRest(rest)
-    getRecommRest(user, cur, rest)
+    result = []
+    result = accuraccy_test(rest)
 
     for restaurant in rest:
         print(restaurant.getScore())
