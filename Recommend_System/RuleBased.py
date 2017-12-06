@@ -204,6 +204,7 @@ def accuraccy_test(rest_info):
 
 if __name__ == "__main__":
     # test code
-    #userInput(1, 21, 4, 4, 5, )
+    user = userInput(1, 21, 4, 4, 5, 3, 5, 4, 3, 5, 5, 4, 5, 2, 2, 4)
+    #cur = curInput(1544, 0, )
 
     print("test")
