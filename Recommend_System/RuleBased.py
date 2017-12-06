@@ -75,7 +75,7 @@ class restInfo:
     # it calculate square of distance
     # notice that it does not do square root operation
     def setDistance(self, position, norm):
-        if norm == 0:
+        if norm == -1:
             self.distance = (position[0] - self.latitude) * (position[0] - self.latitude) + (position[1] - self.longitude) * (position[1] - self.longitude)
         else:
             self.distance = norm
@@ -155,7 +155,7 @@ def loadWeightAndSaveToRest(rest_arr):
 def getRecommRest(usrinfo, curinfo, rest_arr):
     # set distance
     for rest in rest_arr:
-        rest.setDistance(curinfo.getPosition(), 0)
+        rest.setDistance(curinfo.getPosition(), -1)
 
 
     preference = usrinfo.preference
@@ -182,7 +182,7 @@ def getRecommRest(usrinfo, curinfo, rest_arr):
         rest.addScore(rest.getWeight()[13] * rest.getGlobalRate())
 
         # changed this line, need inspection later
-        rest.addScore(rest.getWeight()[14] * rest.getDistance() * (1 - 0.5 * usrinfo.pref_for_distance))
+        rest.addScore(rest.getWeight()[14] * -rest.getDistance() * (1 - 0.5 * usrinfo.pref_for_distance))
         # weather
         # time
         # temperature
