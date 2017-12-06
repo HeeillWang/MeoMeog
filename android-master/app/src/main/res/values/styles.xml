@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light">
+        <!-- Customize your theme here. -->
+        <item name="colorAccent">#ed3a3a</item>
+        <item name="colorPrimary">#fdfdfd</item>
+        <item name="colorPrimaryDark">#000000</item>
+        <item name="colorControlHighlight">#fcd877</item>
+        <item name="colorControlNormal">#ff4e4e</item>
+
+
+    </style>
+    <style name="SplashTheme" parent="@android:style/Theme.Light.NoTitleBar">
+        <item name="android:windowBackground">@drawable/splash2</item>
+    </style>
+
+</resources>
