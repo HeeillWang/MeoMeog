@@ -172,6 +172,8 @@ def getRecommRest(usrinfo, curinfo, rest_arr):
             maxDist = rest.getDistance()
 
     distDiff = maxDist - minDist
+    if distDiff == 0:
+        distDiff = 1
 
     for rest in rest_arr:
         rest.setDistance((0, 0), (rest.getDistance() - minDist) / distDiff)
@@ -180,7 +182,7 @@ def getRecommRest(usrinfo, curinfo, rest_arr):
         rest.addScore(rest.getWeight()[13] * rest.getGlobalRate())
 
         # changed this line, need inspection later
-        rest.addScore(rest.getWeight()[14] * rest.getDistance() * (1-usrinfo.pref_for_distance))
+        rest.addScore(rest.getWeight()[14] * rest.getDistance() * (1 - 0.5 * usrinfo.pref_for_distance))
         # weather
         # time
         # temperature
@@ -201,4 +203,7 @@ def accuraccy_test(rest_info):
 
 
 if __name__ == "__main__":
+    # test code
+    #userInput(1, 21, 4, 4, 5, )
+
     print("test")
