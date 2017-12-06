@@ -20,7 +20,7 @@ class preference:
         self.prefList.append(self.normalizer(western))
         self.prefList.append(self.normalizer(sashimi))
 
-    def normalizer(pref):
+    def normalizer(self, pref):
         if pref >= 3:
             pref = pref + 5
 
@@ -40,7 +40,7 @@ class userInput:
         self.pref_for_new_rest = self.normalizer(pref_for_new_rest)
         self.pref_for_distance = self.normalizer(pref_for_distance)
 
-    def normalizer(pref):
+    def normalizer(self, pref):
         return pref / 5
 
 
@@ -121,13 +121,13 @@ class restInfo:
 # rest_info : list of dictionary => need to inspect later
 def parse(user_input, cur_info, rest_info):
     pref = preference(user_input[2], user_input[3], user_input[4], user_input[5], user_input[6], user_input[7], user_input[8], user_input[9], user_input[10], user_input[11], user_input[12], user_input[13])
-    user = userInput(user_input[0], userInput[1], pref, user_input[14], user_input[15])
+    user = userInput(user_input[0], user_input[1], pref, user_input[14], user_input[15])
     cur = curInput(cur_info[0], cur_info[1], cur_info[2], cur_info[3])
     rest = []
     #name, category, latitude, longitude, globalRate, userRate, startTime, endTime
 
     for i in range(len(rest_info)):
-        rest.append(restInfo(rest_info[i]['name'], rest_info[i]['latitude'], rest_info[i]['longitude'], rest_info[i]['globlRate'], rest_info[i]['userRate'], rest_info[i]['startTime'], rest_info[i]['endTime']))
+        rest.append(restInfo(rest_info[i]['name'], rest_info[i]['category'], rest_info[i]['latitude'], rest_info[i]['longitude'], rest_info[i]['globalRate'], rest_info[i]['userRate'], rest_info[i]['startTime'], rest_info[i]['endTime']))
 
     return user, cur, rest
 
