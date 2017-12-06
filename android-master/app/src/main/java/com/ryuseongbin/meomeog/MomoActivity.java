@@ -18,7 +18,7 @@ public class MomoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_momo);
 
-        Intent intent = getIntent();
+        final Intent intent = getIntent();
         String name = intent.getStringExtra("name");
         String category = intent.getStringExtra("category");
         String grade = intent.getStringExtra("grade");
@@ -44,7 +44,8 @@ public class MomoActivity extends AppCompatActivity {
         button_go.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                /*가는 길 찾기*/
+                Intent intent = new Intent(MomoActivity.this,MapsActivity.class);
+                startActivity(intent);
 
             }
         });

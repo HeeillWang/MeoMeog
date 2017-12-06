@@ -1,58 +1,58 @@
 [
     {
-        "merged": "C:\\Android\\android-master\\android-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\notification_action_background.xml",
-        "source": "C:\\Users\\민지\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-26.1.0.aar\\09febc2862de067a5e0d20849258a853\\res\\drawable-v21\\notification_action_background.xml"
+        "merged": "O:\\MeoMeog\\android-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\notification_action_background.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-26.1.0.aar\\8120fcf75fb68b2bb03ddc6e108c3eba\\res\\drawable-v21\\notification_action_background.xml"
     },
     {
-        "merged": "C:\\Android\\android-master\\android-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\avd_hide_password.xml",
-        "source": "C:\\Users\\민지\\.gradle\\caches\\transforms-1\\files-1.1\\design-26.1.0.aar\\3098407a0af1333d79423c0780ca2246\\res\\drawable-v21\\avd_hide_password.xml"
+        "merged": "O:\\MeoMeog\\android-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\abc_action_bar_item_background_material.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\6a8b09efde42f84982ba083742b4753d\\res\\drawable-v21\\abc_action_bar_item_background_material.xml"
     },
     {
-        "merged": "C:\\Android\\android-master\\android-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\abc_edit_text_material.xml",
-        "source": "C:\\Users\\민지\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\9d63d0e142b27ac31fe3d2f6e1602e81\\res\\drawable-v21\\abc_edit_text_material.xml"
+        "merged": "O:\\MeoMeog\\android-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\avd_hide_password.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\design-26.1.0.aar\\b0bc5989285d8b29dd9c790e9a2b0f7f\\res\\drawable-v21\\avd_hide_password.xml"
     },
     {
-        "merged": "C:\\Android\\android-master\\android-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\ic_menu_slideshow.xml",
-        "source": "C:\\Android\\android-master\\android-master\\app\\src\\main\\res\\drawable-v21\\ic_menu_slideshow.xml"
+        "merged": "O:\\MeoMeog\\android-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\design_password_eye.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\design-26.1.0.aar\\b0bc5989285d8b29dd9c790e9a2b0f7f\\res\\drawable-v21\\design_password_eye.xml"
     },
     {
-        "merged": "C:\\Android\\android-master\\android-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\abc_action_bar_item_background_material.xml",
-        "source": "C:\\Users\\민지\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\9d63d0e142b27ac31fe3d2f6e1602e81\\res\\drawable-v21\\abc_action_bar_item_background_material.xml"
+        "merged": "O:\\MeoMeog\\android-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\ic_menu_slideshow.xml",
+        "source": "O:\\MeoMeog\\android-master\\app\\src\\main\\res\\drawable-v21\\ic_menu_slideshow.xml"
     },
     {
-        "merged": "C:\\Android\\android-master\\android-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\avd_show_password.xml",
-        "source": "C:\\Users\\민지\\.gradle\\caches\\transforms-1\\files-1.1\\design-26.1.0.aar\\3098407a0af1333d79423c0780ca2246\\res\\drawable-v21\\avd_show_password.xml"
+        "merged": "O:\\MeoMeog\\android-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\ic_menu_send.xml",
+        "source": "O:\\MeoMeog\\android-master\\app\\src\\main\\res\\drawable-v21\\ic_menu_send.xml"
     },
     {
-        "merged": "C:\\Android\\android-master\\android-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\ic_menu_send.xml",
-        "source": "C:\\Android\\android-master\\android-master\\app\\src\\main\\res\\drawable-v21\\ic_menu_send.xml"
+        "merged": "O:\\MeoMeog\\android-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\ic_menu_camera.xml",
+        "source": "O:\\MeoMeog\\android-master\\app\\src\\main\\res\\drawable-v21\\ic_menu_camera.xml"
     },
     {
-        "merged": "C:\\Android\\android-master\\android-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\design_bottom_navigation_item_background.xml",
-        "source": "C:\\Users\\민지\\.gradle\\caches\\transforms-1\\files-1.1\\design-26.1.0.aar\\3098407a0af1333d79423c0780ca2246\\res\\drawable-v21\\design_bottom_navigation_item_background.xml"
+        "merged": "O:\\MeoMeog\\android-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\ic_menu_manage.xml",
+        "source": "O:\\MeoMeog\\android-master\\app\\src\\main\\res\\drawable-v21\\ic_menu_manage.xml"
     },
     {
-        "merged": "C:\\Android\\android-master\\android-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\design_password_eye.xml",
-        "source": "C:\\Users\\민지\\.gradle\\caches\\transforms-1\\files-1.1\\design-26.1.0.aar\\3098407a0af1333d79423c0780ca2246\\res\\drawable-v21\\design_password_eye.xml"
+        "merged": "O:\\MeoMeog\\android-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\ic_menu_gallery.xml",
+        "source": "O:\\MeoMeog\\android-master\\app\\src\\main\\res\\drawable-v21\\ic_menu_gallery.xml"
     },
     {
-        "merged": "C:\\Android\\android-master\\android-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\ic_menu_gallery.xml",
-        "source": "C:\\Android\\android-master\\android-master\\app\\src\\main\\res\\drawable-v21\\ic_menu_gallery.xml"
+        "merged": "O:\\MeoMeog\\android-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\ic_menu_share.xml",
+        "source": "O:\\MeoMeog\\android-master\\app\\src\\main\\res\\drawable-v21\\ic_menu_share.xml"
     },
     {
-        "merged": "C:\\Android\\android-master\\android-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\abc_btn_colored_material.xml",
-        "source": "C:\\Users\\민지\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\9d63d0e142b27ac31fe3d2f6e1602e81\\res\\drawable-v21\\abc_btn_colored_material.xml"
+        "merged": "O:\\MeoMeog\\android-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\abc_btn_colored_material.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\6a8b09efde42f84982ba083742b4753d\\res\\drawable-v21\\abc_btn_colored_material.xml"
     },
     {
-        "merged": "C:\\Android\\android-master\\android-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\ic_menu_camera.xml",
-        "source": "C:\\Android\\android-master\\android-master\\app\\src\\main\\res\\drawable-v21\\ic_menu_camera.xml"
+        "merged": "O:\\MeoMeog\\android-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\design_bottom_navigation_item_background.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\design-26.1.0.aar\\b0bc5989285d8b29dd9c790e9a2b0f7f\\res\\drawable-v21\\design_bottom_navigation_item_background.xml"
     },
     {
-        "merged": "C:\\Android\\android-master\\android-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\ic_menu_share.xml",
-        "source": "C:\\Android\\android-master\\android-master\\app\\src\\main\\res\\drawable-v21\\ic_menu_share.xml"
+        "merged": "O:\\MeoMeog\\android-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\avd_show_password.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\design-26.1.0.aar\\b0bc5989285d8b29dd9c790e9a2b0f7f\\res\\drawable-v21\\avd_show_password.xml"
     },
     {
-        "merged": "C:\\Android\\android-master\\android-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\ic_menu_manage.xml",
-        "source": "C:\\Android\\android-master\\android-master\\app\\src\\main\\res\\drawable-v21\\ic_menu_manage.xml"
+        "merged": "O:\\MeoMeog\\android-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\abc_edit_text_material.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\6a8b09efde42f84982ba083742b4753d\\res\\drawable-v21\\abc_edit_text_material.xml"
     }
 ]

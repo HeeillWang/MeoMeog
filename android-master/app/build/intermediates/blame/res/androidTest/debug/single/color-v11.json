@@ -1,10 +1,10 @@
 [
     {
-        "merged": "C:\\Android\\android-master\\android-master\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\color-v11\\abc_background_cache_hint_selector_material_light.xml",
-        "source": "C:\\Users\\민지\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\9d63d0e142b27ac31fe3d2f6e1602e81\\res\\color-v11\\abc_background_cache_hint_selector_material_light.xml"
+        "merged": "O:\\MeoMeog\\android-master\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\color-v11\\abc_background_cache_hint_selector_material_light.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\6a8b09efde42f84982ba083742b4753d\\res\\color-v11\\abc_background_cache_hint_selector_material_light.xml"
     },
     {
-        "merged": "C:\\Android\\android-master\\android-master\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\color-v11\\abc_background_cache_hint_selector_material_dark.xml",
-        "source": "C:\\Users\\민지\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\9d63d0e142b27ac31fe3d2f6e1602e81\\res\\color-v11\\abc_background_cache_hint_selector_material_dark.xml"
+        "merged": "O:\\MeoMeog\\android-master\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\color-v11\\abc_background_cache_hint_selector_material_dark.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\6a8b09efde42f84982ba083742b4753d\\res\\color-v11\\abc_background_cache_hint_selector_material_dark.xml"
     }
 ]
