@@ -195,19 +195,24 @@ def getRecommRest(usrinfo, curinfo, rest_arr):
     return rest_arr[0:3]
 
 def accuraccy_test(rest_info):
-    data = np.loadtxt('survey.csv', delimiter='\t',dtype=np.float32)
+    data = np.loadtxt('survey.csv', delimiter=',',dtype=np.float32)
+
     correct = 0
 
+'''
     for i in range(data.size):
         user_input, cur_input, _ = parse(data[i][0:16], data[i][16:21], [])
         result = getRecommRest(user_input, cur_input, rest_info)
         ans = data[i][21]
+        
 
         for j in range(len(result)):
             if(ans == result[j].name):
                 correct += 1
+                
+'''
 
-    print("Correct : ", correct, " / total : ", data.size)
+    #print("Correct : ", correct, " / total : ", data.size)
 
 
 
