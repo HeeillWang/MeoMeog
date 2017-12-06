@@ -141,7 +141,8 @@ def parse(user_input, cur_info, rest_info):
 # returns : list of 'restInfo' objects.
 def loadWeightAndSaveToRest(rest_arr):
     # skip first row
-    data = np.loadtxt("/home/hsherlcok/CapstoneDesign/MeoMeog/Recommend_System/weight.csv", delimiter=",", dtype=np.float32, skiprows=1)
+    #data = np.loadtxt("/home/hsherlcok/CapstoneDesign/MeoMeog/Recommend_System/weight.csv", delimiter=",", dtype=np.float32, skiprows=1)
+    data = np.loadtxt("weight.csv", delimiter=",", dtype=np.float32, skiprows=1)
 
     for rest in rest_arr:
         rest.setWeight(data[rest.getCategory()])
@@ -194,13 +195,21 @@ def getRecommRest(usrinfo, curinfo, rest_arr):
     return rest_arr[0:3]
 
 def accuraccy_test(rest_info):
-    f = open('survey.csv', 'r', encoding='utf-8')
-    np.loadtxt(f, delimiter=',',dtype=None)
+    data = np.loadtxt('survey.csv', delimiter='\t',dtype=np.float32)
+    correct = 0
+
+    for i in range(data.size):
+        user_input, cur_input, _ = parse(data[i][0:16], data[i][16:21], [])
+        result = getRecommRest(user_input, cur_input, rest_info)
+        ans = data[i][21]
+
+        for j in range(len(result)):
+            if(ans == result[j].name):
+                correct += 1
+
+    print("Correct : ", correct, " / total : ", data.size)
 
 
-#    for i in range(data.size):
- #       user_input, cur_input, _ = parse(data[i][0:16], data[i][16:21], [])
-  #      result = getRecommRest(user_input, cur_input, rest_info)
 
 
 
@@ -212,8 +221,8 @@ if __name__ == "__main__":
     user = userInput(1, 21, pref, 2, 4)
     cur = curInput(1544, 0, 37.293959, 126.974855)
     rest = []
-    rest.append(restInfo("bonzzi", 4, 37.297195, 126.971490, 4.6, 3.0, 1100, 2100))
-    rest.append(restInfo("bongusbapbugger", 5, 37.297716, 126.973346, 4.0, 3.0, 1100, 2100))
+    rest.append(restInfo(1, 4, 37.297195, 126.971490, 4.6, 3.0, 1100, 2100))
+    rest.append(restInfo(2, 5, 37.297716, 126.973346, 4.0, 3.0, 1100, 2100))
 
     loadWeightAndSaveToRest(rest)
     result = []
