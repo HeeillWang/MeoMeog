@@ -208,6 +208,8 @@ def init_score(rest_arr):
         rest_arr[i].setScore(0)
 
 def accuraccy_test(rest_arr):
+    loadWeightAndSaveToRest(rest_arr)
+
     data = np.loadtxt('survey.csv', delimiter=',',dtype=np.float32)
 
     correct_y = 0 # no. of correct 'yes'
