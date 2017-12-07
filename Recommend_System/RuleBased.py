@@ -214,25 +214,24 @@ def accuraccy_test(rest_arr):
     correct_n = 0 # no. of correct 'no'
     count_y = 0 # counter for yes
     count_n = 0 # counter for no
-    
+
     for i in range(len(data)):
-        cur_data = [data[i][16], data[i][17], data[i][19], data[i][20], data[i][18]]
-        user_input, cur_input, _ = parse(data[i][0:16], cur_data, [])
+        user_input, cur_input, _ = parse(data[i][0:16], data[i][16:21], [])
 
         init_score(rest_arr)
         result = getRecommRest(user_input, cur_input, rest_arr)
         ans = data[i][21]
 
         if(data[i][22] == 1):
+            count_y += 1
             # survey respond is 'yes'
             for j in range(len(result)):
-                count_y += 1
                 if (ans == result[j].name):
                     correct_y += 1
         else:
+            count_n += 1
             # survey respond is 'no'
             for j in range(len(result)):
-                count_n += 1
                 if (ans == result[j].name):
                     break;
 
