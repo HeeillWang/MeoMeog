@@ -85,15 +85,21 @@ class MyHandler(BaseHTTPRequestHandler):
         obs = owm.weather_at_coords(decode_json['lat'], decode_json['long'])
         w = obs.get_weather()
         stat = w.get_detailed_status()
+        temp = w.get_temperature(unit='celsius')
         
         if DEBUG:
             print stat
+            print temp
+            print type(temp)
+            
+        temp = temp['temp']
         
         weather = weather_mapping[stat]
         cur_input.append(weather)
             
         cur_input.append(decode_json['lat'])
         cur_input.append(decode_json['long'])
+        cur_input.append(temp)
         
         if DEBUG:
             print cur_input
@@ -128,6 +134,7 @@ class MyHandler(BaseHTTPRequestHandler):
         # restarr = RuleBased.getRecommRest(usr_parse, cur_parse, rest_parse)
         
         if DEBUG:
+            RuleBased.loadWeightAndSaveToRest(rest_parse)
             RuleBased.accuraccy_test(rest_parse)
             
         """
