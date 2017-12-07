@@ -144,7 +144,7 @@ def parse(user_input, cur_info, rest_info):
 def loadWeightAndSaveToRest(rest_arr):
     # skip first row
     data = np.loadtxt("/home/hsherlcok/CapstoneDesign/MeoMeog/Recommend_System/weight.csv", delimiter=",", dtype=np.float32, skiprows=1)
-    # data = np.loadtxt("weight.csv", delimiter=",", dtype=np.float32, skiprows=1)
+    #data = np.loadtxt("weight.csv", delimiter=",", dtype=np.float32, skiprows=1)
 
     for rest in rest_arr:
         rest.setWeight(data[rest.getCategory()])
@@ -251,7 +251,7 @@ if __name__ == "__main__":
     # test code
     pref = preference(4, 4, 5, 3, 5, 4, 3, 5, 5, 4, 5, 2)
     user = userInput(1, 21, pref, 2, 4)
-    cur = curInput(1544, 0, 37.293959, 126.974855)
+    cur = curInput(1544, 0, 37.293959, 126.974855, 20)
     rest = []
     rest.append(restInfo(1, 4, 37.297195, 126.971490, 4.6, 3.0, 1100, 2100))
     rest.append(restInfo(2, 5, 37.297716, 126.973346, 4.0, 3.0, 1100, 2100))
