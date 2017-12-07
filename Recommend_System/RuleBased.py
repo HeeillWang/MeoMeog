@@ -46,11 +46,12 @@ class userInput:
 
 class curInput:
     # same order as in survey
-    def __init__(self, time, weather, latitude, longitude):
+    def __init__(self, time, weather, latitude, longitude, temperature):
         self.time = time
         self.weather = weather
         self.latitude = latitude
         self.longitude = longitude
+        self.temperature = temperature
 
     def getPosition(self):
         return (self.latitude, self.longitude)
@@ -123,7 +124,7 @@ class restInfo:
 def parse(user_input, cur_info, rest_info):
     pref = preference(user_input[2], user_input[3], user_input[4], user_input[5], user_input[6], user_input[7], user_input[8], user_input[9], user_input[10], user_input[11], user_input[12], user_input[13])
     user = userInput(user_input[0], user_input[1], pref, user_input[14], user_input[15])
-    cur = curInput(cur_info[0], cur_info[1], cur_info[2], cur_info[3])
+    cur = curInput(cur_info[0], cur_info[1], cur_info[2], cur_info[3], cur_info[4])
     rest = []
 
     #name, category, latitude, longitude, globalRate, userRate, startTime, endTime
