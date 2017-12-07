@@ -114,14 +114,13 @@ class MyHandler(BaseHTTPRequestHandler):
             tmp = dict()
             tmp['id'] = row[0]
             tmp['name'] = row[1]
-            tmp['category'] = row[10]
+            tmp['category'] = row[8]
             tmp['latitude'] = row[2]
             tmp['longitude'] = row[3]
-            tmp['rating'] = row[4]
-            tmp['globalRate'] = row[6]
-            tmp['userRate'] = row[7]
-            tmp['startTime'] = row[8]
-            tmp['endTime'] = row[9]
+            tmp['globalRate'] = row[4]
+            tmp['userRate'] = row[5]
+            tmp['startTime'] = row[6]
+            tmp['endTime'] = row[7]
 
             restinfo.append(tmp)
             
