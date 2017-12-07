@@ -190,7 +190,10 @@ def getRecommRest(usrinfo, curinfo, rest_arr):
         # temperature
         # if out of service time, flush that restaurant's score -1
         if (curinfo.getTime() < rest.getTime()[0]) or (curinfo.getTime() > rest.getTime()[1]):
-            rest.setScore(-1)
+            if rest.getTime()[0] == -1:
+                continue
+            else:
+                rest.setScore(-1)
 
     sorted(rest_arr, key=lambda restInfo:restInfo.score, reverse = True)
 
