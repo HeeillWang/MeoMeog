@@ -130,13 +130,12 @@ class MyHandler(BaseHTTPRequestHandler):
             print usr_parse
             print cur_parse
         
-        # RuleBased.loadWeightAndSaveToRest(rest_parse)
-        # restarr = RuleBased.getRecommRest(usr_parse, cur_parse, rest_parse)
+        RuleBased.loadWeightAndSaveToRest(rest_parse)
+        restarr = RuleBased.getRecommRest(usr_parse, cur_parse, rest_parse)
         
-        if DEBUG:
-            RuleBased.accuraccy_test(rest_parse)
+        # if DEBUG:
+        #    RuleBased.accuraccy_test(rest_parse)
             
-        """
         if DEBUG:
             print ("Recommened Restaurant")
             print restarr
@@ -156,7 +155,6 @@ class MyHandler(BaseHTTPRequestHandler):
             print resultStr
                 
         self.wfile.write(str(resultStr))
-        """
 
 if __name__ == '__main__':
 
