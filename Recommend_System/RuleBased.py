@@ -195,7 +195,7 @@ def getRecommRest(usrinfo, curinfo, rest_arr):
             else:
                 rest.setScore(-1)
 
-    rest_arr = sorted(rest_arr, key=lambda restInfo:restInfo.score, reverse=True)
+    sorted(rest_arr, key=lambda restInfo:restInfo.score, reverse=True)
 
 
     return rest_arr[0:3]
