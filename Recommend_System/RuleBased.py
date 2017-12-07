@@ -192,7 +192,7 @@ def getRecommRest(usrinfo, curinfo, rest_arr):
         if (curinfo.getTime() < rest.getTime()[0]) or (curinfo.getTime() > rest.getTime()[1]):
             rest.setScore(-1)
 
-    sorted(rest_arr, key=lambda restInfo:restInfo.score)
+    sorted(rest_arr, key=lambda restInfo:restInfo.score, reverse = True)
 
     return rest_arr[0:3]
 
