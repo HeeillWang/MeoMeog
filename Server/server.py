@@ -56,6 +56,9 @@ class MyHandler(BaseHTTPRequestHandler):
                          decode_json['flour'], decode_json['chicken'], decode_json['pizza'], decode_json['noodle'], decode_json['western'], decode_json['sashimi']
                          , decode_json['pref_new_rest'], decode_json['pref_dist']]
         
+        if DEBUG:
+            print usr_input
+            
         # time weather lat long
         cur_input = []
         
@@ -74,36 +77,26 @@ class MyHandler(BaseHTTPRequestHandler):
         if DEBUG:
             print curdate
             
-        if curdate < 1100:
-            date = 0
-        elif curdate < 1400:
-            date = 1
-        elif curdate < 1600:
-            date = 2
-        elif curdate < 1800:
-            date = 3
-        elif curdate < 2000:
-            date= 4
-        else:
-            date = 5
-            
-        cur_input.append(date)
+        cur_input.append(curdate)
         
         # get current weather stat and mapping
         # 0 - clear 1 - cloudy 2 - rain 3 - snow
         owm = OWM(API_KEY)
         obs = owm.weather_at_coords(decode_json['lat'], decode_json['long'])
         w = obs.get_weather()
-        stat = w.get_status()
+        stat = w.get_detailed_status()
         
         if DEBUG:
             print stat
         
-        weather = weather_mapping.get(stat)
+        weather = weather_mapping[stat]
         cur_input.append(weather)
-        
+            
         cur_input.append(decode_json['lat'])
         cur_input.append(decode_json['long'])
+        
+        if DEBUG:
+            print cur_input
         
         # get restaurant information from database
         cur.execute("SELECT * FROM RestInfo")           # Send QUERY
@@ -123,10 +116,6 @@ class MyHandler(BaseHTTPRequestHandler):
             tmp['endTime'] = row[7]
 
             restinfo.append(tmp)
-            
-        if DEBUG:
-            print ("restinfo")
-            print restinfo
         
         usr_parse, cur_parse, rest_parse = RuleBased.parse(usr_input, cur_input, restinfo)
         
@@ -134,7 +123,6 @@ class MyHandler(BaseHTTPRequestHandler):
             print ("Parsing Data...")
             print usr_parse
             print cur_parse
-            print rest_parse
         
         RuleBased.loadWeightAndSaveToRest(rest_parse)
         restarr = RuleBased.getRecommRest(usr_parse, cur_parse, rest_parse)
