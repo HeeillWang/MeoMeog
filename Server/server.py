@@ -134,7 +134,6 @@ class MyHandler(BaseHTTPRequestHandler):
         # restarr = RuleBased.getRecommRest(usr_parse, cur_parse, rest_parse)
         
         if DEBUG:
-            RuleBased.loadWeightAndSaveToRest(rest_parse)
             RuleBased.accuraccy_test(rest_parse)
             
         """
