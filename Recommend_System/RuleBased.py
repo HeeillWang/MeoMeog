@@ -214,8 +214,9 @@ def accuraccy_test(rest_arr):
     count_y = 0 # counter for yes
     count_n = 0 # counter for no
 
-    for i in range(2):
-        user_input, cur_input, _ = parse(data[i][0:16], data[i][16:21], [])
+    for i in range(len(data)):
+        cur_data = [data[i][17], data[i][18], data[i][19], data[i][20]]
+        user_input, cur_input, _ = parse(data[i][0:16], cur_data, [])
 
         init_score(rest_arr)
         result = getRecommRest(user_input, cur_input, rest_arr)
