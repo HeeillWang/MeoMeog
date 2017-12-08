@@ -292,4 +292,3 @@ if __name__ == "__main__":
 
     loadWeightAndSaveToRest(rest)
     accuraccy_test(rest)
-
