@@ -210,7 +210,7 @@ def getRecommRest(usrinfo, curinfo, rest_arr):
         rest.addScore(rest.getWeight()[13] * int(rest.getGlobalRate()))
 
         # changed this line, need inspection later
-        rest.addScore(rest.getWeight()[14] * -rest.getDistance() * (1 - 0.5 * usrinfo.pref_for_distance))
+        rest.addScore(rest.getWeight()[14] * -rest.getDistance() * (1 - 0.2 * usrinfo.pref_for_distance))
         # weather
         rest.addScore(rest.getWeight()[22 + int(curinfo.getWeather())])
         # time
@@ -223,9 +223,13 @@ def getRecommRest(usrinfo, curinfo, rest_arr):
             if rest.getTime()[0] == -1:
                 continue
             else:
-                rest.setScore(-1)
+                rest.setScore(-10000)
 
     rest_arr = sorted(rest_arr, key=lambda restInfo:restInfo.score, reverse=True)
+
+    #print('start')
+    #for rest in rest_arr:
+    #    print(rest.getScore(),'and', rest.getDistance())
 
     return rest_arr[0:3]
 
