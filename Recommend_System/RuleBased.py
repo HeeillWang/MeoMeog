@@ -53,8 +53,6 @@ class curInput:
         self.longitude = longitude
         self.temperature = temperature
 
-        print(time, weather, latitude, longitude, temperature, "end")
-
         if time < 1100:
             self.date = 0
         elif time < 1400:
@@ -161,8 +159,8 @@ def parse(user_input, cur_info, rest_info):
 # returns : list of 'restInfo' objects.
 def loadWeightAndSaveToRest(rest_arr):
     # skip first row
-    data = np.loadtxt("/home/hsherlcok/CapstoneDesign/MeoMeog/Recommend_System/weight.csv", delimiter=",", dtype=np.float32, skiprows=1)
-    #data = np.loadtxt("weight.csv", delimiter=",", dtype=np.float32, skiprows=1)
+    #data = np.loadtxt("/home/hsherlcok/CapstoneDesign/MeoMeog/Recommend_System/weight.csv", delimiter=",", dtype=np.float32, skiprows=1)
+    data = np.loadtxt("weight.csv", delimiter=",", dtype=np.float32, skiprows=1)
 
     for rest in rest_arr:
         rest.setWeight(data[rest.getCategory()])
@@ -225,7 +223,6 @@ def init_score(rest_arr):
 
 def accuraccy_test(rest_arr):
     loadWeightAndSaveToRest(rest_arr)
-
     data = np.loadtxt('survey.csv', delimiter=',',dtype=np.float32)
 
     correct_y = 0 # no. of correct 'yes'
@@ -249,12 +246,14 @@ def accuraccy_test(rest_arr):
                     correct_y += 1
         else:
             count_n += 1
+            flag = 1
             # survey respond is 'no'
             for j in range(len(result)):
                 if (ans == result[j].name):
+                    flag = 0
                     break;
 
-            if(j == len(result)):
+            if(flag == 1):
                 correct_n += 1
 
     print("[yes] Correct : ", correct_y, " / total : ", count_y)
@@ -267,12 +266,14 @@ if __name__ == "__main__":
     pref = preference(4, 4, 5, 3, 5, 4, 3, 5, 5, 4, 5, 2)
     user = userInput(1, 21, pref, 2, 4)
     cur = curInput(1544, 0, 37.293959, 126.974855, 20)
+    data = np.loadtxt("rest_info.csv", delimiter=",",dtype=np.float32, skiprows=1)
+
     rest = []
-    rest.append(restInfo(1, 4, 37.297195, 126.971490, 4.6, 3.0, 1100, 2100))
-    rest.append(restInfo(2, 5, 37.297716, 126.973346, 4.0, 3.0, 1100, 2100))
+
+    for i in range(len(data)):
+        rest.append(restInfo(int(data[i][0]), int(data[i][1]), data[i][2],data[i][3], data[i][4],0, data[i][5], data[i][6]))
+
 
     loadWeightAndSaveToRest(rest)
     accuraccy_test(rest)
 
-    for restaurant in rest:
-        print(restaurant.getScore())
