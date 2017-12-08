@@ -51,13 +51,40 @@ class curInput:
         self.weather = weather
         self.latitude = latitude
         self.longitude = longitude
-        self.temperature = temperature
+        self.temperature = self.normalizer(temperature)
+
+        print(time, weather, latitude, longitude, temperature, "end")
+
+        if time < 1100:
+            self.date = 0
+        elif time < 1400:
+            self.date = 1
+        elif time < 1600:
+            self.date = 2
+        elif time < 1800:
+            self.date = 3
+        elif time < 2000:
+            self.date = 4
+        else:
+            self.date = 5
 
     def getPosition(self):
         return (self.latitude, self.longitude)
 
     def getTime(self):
         return self.time
+
+    def getDate(self):
+        return self.date
+
+    def getWeather(self):
+        return self.weather
+
+    def getTemperature(self):
+        return self.temperature
+
+    def normalizer(self, tem):
+        return (tem + 20) / 60
 
 
 class restInfo:
@@ -143,8 +170,8 @@ def parse(user_input, cur_info, rest_info):
 # returns : list of 'restInfo' objects.
 def loadWeightAndSaveToRest(rest_arr):
     # skip first row
-    data = np.loadtxt("/home/hsherlcok/CapstoneDesign/MeoMeog/Recommend_System/weight.csv", delimiter=",", dtype=np.float32, skiprows=1)
-    #data = np.loadtxt("weight.csv", delimiter=",", dtype=np.float32, skiprows=1)
+    #data = np.loadtxt("/home/hsherlcok/CapstoneDesign/MeoMeog/Recommend_System/weight.csv", delimiter=",", dtype=np.float32, skiprows=1)
+    data = np.loadtxt("weight.csv", delimiter=",", dtype=np.float32, skiprows=1)
 
     for rest in rest_arr:
         rest.setWeight(data[rest.getCategory()])
@@ -187,8 +214,12 @@ def getRecommRest(usrinfo, curinfo, rest_arr):
         # changed this line, need inspection later
         rest.addScore(rest.getWeight()[14] * -rest.getDistance() * (1 - 0.5 * usrinfo.pref_for_distance))
         # weather
+        rest.addScore(rest.getWeight()[22 + curinfo.getWeather()])
         # time
+        rest.addScore(rest.getWeight()[16 + curinfo.getDate()])
         # temperature
+        rest.addScore(rest.getWeight()[15] * curinfo.getTemperature())
+
         # if out of service time, flush that restaurant's score -1
         if (curinfo.getTime() < rest.getTime()[0]) or (curinfo.getTime() > rest.getTime()[1]):
             if rest.getTime()[0] == -1:
@@ -198,10 +229,7 @@ def getRecommRest(usrinfo, curinfo, rest_arr):
 
     rest_arr = sorted(rest_arr, key=lambda restInfo:restInfo.score, reverse=True)
 
-
     return rest_arr[0:3]
-
-
 
 def init_score(rest_arr):
     for i in range(len(rest_arr)):
@@ -218,7 +246,7 @@ def accuraccy_test(rest_arr):
     count_n = 0 # counter for no
 
     for i in range(len(data)):
-        cur_info = [data[16], data[17], data[19], data[20], data[18]]
+        cur_info = [data[i][16], data[i][17], data[i][19], data[i][20], data[i][18]]
         user_input, cur_input, _ = parse(data[i][0:16], cur_info, [])
 
         init_score(rest_arr)
@@ -246,10 +274,6 @@ def accuraccy_test(rest_arr):
 
 
 
-
-
-
-
 if __name__ == "__main__":
     # test code
     pref = preference(4, 4, 5, 3, 5, 4, 3, 5, 5, 4, 5, 2)
@@ -260,8 +284,7 @@ if __name__ == "__main__":
     rest.append(restInfo(2, 5, 37.297716, 126.973346, 4.0, 3.0, 1100, 2100))
 
     loadWeightAndSaveToRest(rest)
-    result = []
-    result = accuraccy_test(rest)
+    accuraccy_test(rest)
 
     for restaurant in rest:
         print(restaurant.getScore())
