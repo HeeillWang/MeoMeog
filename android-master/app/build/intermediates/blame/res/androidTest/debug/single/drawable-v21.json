@@ -1,34 +1,34 @@
 [
     {
-        "merged": "O:\\MeoMeog\\android-master\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-v21\\design_password_eye.xml",
-        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\design-26.1.0.aar\\b0bc5989285d8b29dd9c790e9a2b0f7f\\res\\drawable-v21\\design_password_eye.xml"
+        "merged": "C:\\Users\\Sherlcok\\Documents\\GitHub\\MeoMeog\\android-master\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-v21\\abc_btn_colored_material.xml",
+        "source": "C:\\Users\\Sherlcok\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\07b662d9daacbedb8f712f6f17e6d5d5\\res\\drawable-v21\\abc_btn_colored_material.xml"
     },
     {
-        "merged": "O:\\MeoMeog\\android-master\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-v21\\abc_edit_text_material.xml",
-        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\6a8b09efde42f84982ba083742b4753d\\res\\drawable-v21\\abc_edit_text_material.xml"
+        "merged": "C:\\Users\\Sherlcok\\Documents\\GitHub\\MeoMeog\\android-master\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-v21\\design_bottom_navigation_item_background.xml",
+        "source": "C:\\Users\\Sherlcok\\.gradle\\caches\\transforms-1\\files-1.1\\design-26.1.0.aar\\282be68d60b333c8723523babf38f46d\\res\\drawable-v21\\design_bottom_navigation_item_background.xml"
     },
     {
-        "merged": "O:\\MeoMeog\\android-master\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-v21\\avd_show_password.xml",
-        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\design-26.1.0.aar\\b0bc5989285d8b29dd9c790e9a2b0f7f\\res\\drawable-v21\\avd_show_password.xml"
+        "merged": "C:\\Users\\Sherlcok\\Documents\\GitHub\\MeoMeog\\android-master\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-v21\\avd_show_password.xml",
+        "source": "C:\\Users\\Sherlcok\\.gradle\\caches\\transforms-1\\files-1.1\\design-26.1.0.aar\\282be68d60b333c8723523babf38f46d\\res\\drawable-v21\\avd_show_password.xml"
     },
     {
-        "merged": "O:\\MeoMeog\\android-master\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-v21\\abc_btn_colored_material.xml",
-        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\6a8b09efde42f84982ba083742b4753d\\res\\drawable-v21\\abc_btn_colored_material.xml"
+        "merged": "C:\\Users\\Sherlcok\\Documents\\GitHub\\MeoMeog\\android-master\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-v21\\abc_edit_text_material.xml",
+        "source": "C:\\Users\\Sherlcok\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\07b662d9daacbedb8f712f6f17e6d5d5\\res\\drawable-v21\\abc_edit_text_material.xml"
     },
     {
-        "merged": "O:\\MeoMeog\\android-master\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-v21\\notification_action_background.xml",
-        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-26.1.0.aar\\8120fcf75fb68b2bb03ddc6e108c3eba\\res\\drawable-v21\\notification_action_background.xml"
+        "merged": "C:\\Users\\Sherlcok\\Documents\\GitHub\\MeoMeog\\android-master\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-v21\\avd_hide_password.xml",
+        "source": "C:\\Users\\Sherlcok\\.gradle\\caches\\transforms-1\\files-1.1\\design-26.1.0.aar\\282be68d60b333c8723523babf38f46d\\res\\drawable-v21\\avd_hide_password.xml"
     },
     {
-        "merged": "O:\\MeoMeog\\android-master\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-v21\\design_bottom_navigation_item_background.xml",
-        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\design-26.1.0.aar\\b0bc5989285d8b29dd9c790e9a2b0f7f\\res\\drawable-v21\\design_bottom_navigation_item_background.xml"
+        "merged": "C:\\Users\\Sherlcok\\Documents\\GitHub\\MeoMeog\\android-master\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-v21\\abc_action_bar_item_background_material.xml",
+        "source": "C:\\Users\\Sherlcok\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\07b662d9daacbedb8f712f6f17e6d5d5\\res\\drawable-v21\\abc_action_bar_item_background_material.xml"
     },
     {
-        "merged": "O:\\MeoMeog\\android-master\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-v21\\avd_hide_password.xml",
-        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\design-26.1.0.aar\\b0bc5989285d8b29dd9c790e9a2b0f7f\\res\\drawable-v21\\avd_hide_password.xml"
+        "merged": "C:\\Users\\Sherlcok\\Documents\\GitHub\\MeoMeog\\android-master\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-v21\\notification_action_background.xml",
+        "source": "C:\\Users\\Sherlcok\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-26.1.0.aar\\702132b1e1c2775445a1d3a56333a33e\\res\\drawable-v21\\notification_action_background.xml"
     },
     {
-        "merged": "O:\\MeoMeog\\android-master\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-v21\\abc_action_bar_item_background_material.xml",
-        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\6a8b09efde42f84982ba083742b4753d\\res\\drawable-v21\\abc_action_bar_item_background_material.xml"
+        "merged": "C:\\Users\\Sherlcok\\Documents\\GitHub\\MeoMeog\\android-master\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-v21\\design_password_eye.xml",
+        "source": "C:\\Users\\Sherlcok\\.gradle\\caches\\transforms-1\\files-1.1\\design-26.1.0.aar\\282be68d60b333c8723523babf38f46d\\res\\drawable-v21\\design_password_eye.xml"
     }
 ]

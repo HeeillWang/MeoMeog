@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MomoActivity extends AppCompatActivity {
     private Button button_back;
@@ -44,9 +45,7 @@ public class MomoActivity extends AppCompatActivity {
         button_go.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MomoActivity.this,MapsActivity.class);
-                startActivity(intent);
-
+                Toast.makeText(getApplicationContext(), "아직 개발 중 입니다.", Toast.LENGTH_LONG).show();
             }
         });
     }

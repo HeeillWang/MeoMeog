@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "O:\\MeoMeog\\android-master\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-land\\values-land.xml",
+            "outputFile": "C:\\Users\\Sherlcok\\Documents\\GitHub\\MeoMeog\\android-master\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-land\\values-land.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\6a8b09efde42f84982ba083742b4753d\\res\\values-land\\values-land.xml",
+                    "source": "C:\\Users\\Sherlcok\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\07b662d9daacbedb8f712f6f17e6d5d5\\res\\values-land\\values-land.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",
@@ -14,7 +14,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\design-26.1.0.aar\\b0bc5989285d8b29dd9c790e9a2b0f7f\\res\\values-land\\values-land.xml",
+                    "source": "C:\\Users\\Sherlcok\\.gradle\\caches\\transforms-1\\files-1.1\\design-26.1.0.aar\\282be68d60b333c8723523babf38f46d\\res\\values-land\\values-land.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -35,10 +35,10 @@
             ]
         },
         {
-            "outputFile": "O:\\MeoMeog\\android-master\\app\\build\\intermediates\\res\\merged\\debug\\values-land\\values-land.xml",
+            "outputFile": "C:\\Users\\Sherlcok\\Documents\\GitHub\\MeoMeog\\android-master\\app\\build\\intermediates\\res\\merged\\debug\\values-land\\values-land.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\6a8b09efde42f84982ba083742b4753d\\res\\values-land\\values-land.xml",
+                    "source": "C:\\Users\\Sherlcok\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\07b662d9daacbedb8f712f6f17e6d5d5\\res\\values-land\\values-land.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",
@@ -48,7 +48,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\design-26.1.0.aar\\b0bc5989285d8b29dd9c790e9a2b0f7f\\res\\values-land\\values-land.xml",
+                    "source": "C:\\Users\\Sherlcok\\.gradle\\caches\\transforms-1\\files-1.1\\design-26.1.0.aar\\282be68d60b333c8723523babf38f46d\\res\\values-land\\values-land.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "O:\\MeoMeog\\android-master\\app\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values-v23\\values-v23.xml",
+            "outputFile": "C:\\Users\\Sherlcok\\Documents\\GitHub\\MeoMeog\\android-master\\app\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values-v23\\values-v23.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\6a8b09efde42f84982ba083742b4753d\\res\\values-v23\\values-v23.xml",
+                    "source": "C:\\Users\\Sherlcok\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\07b662d9daacbedb8f712f6f17e6d5d5\\res\\values-v23\\values-v23.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,19,32,33,34,35,36",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4",
@@ -17,10 +17,10 @@
             ]
         },
         {
-            "outputFile": "O:\\MeoMeog\\android-master\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-v23\\values-v23.xml",
+            "outputFile": "C:\\Users\\Sherlcok\\Documents\\GitHub\\MeoMeog\\android-master\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-v23\\values-v23.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\6a8b09efde42f84982ba083742b4753d\\res\\values-v23\\values-v23.xml",
+                    "source": "C:\\Users\\Sherlcok\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\07b662d9daacbedb8f712f6f17e6d5d5\\res\\values-v23\\values-v23.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,19,32,33,34,35,36",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4",

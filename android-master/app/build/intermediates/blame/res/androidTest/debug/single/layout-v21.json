@@ -1,18 +1,18 @@
 [
     {
-        "merged": "O:\\MeoMeog\\android-master\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout-v21\\notification_action.xml",
-        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-26.1.0.aar\\8120fcf75fb68b2bb03ddc6e108c3eba\\res\\layout-v21\\notification_action.xml"
+        "merged": "C:\\Users\\Sherlcok\\Documents\\GitHub\\MeoMeog\\android-master\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout-v21\\notification_action_tombstone.xml",
+        "source": "C:\\Users\\Sherlcok\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-26.1.0.aar\\702132b1e1c2775445a1d3a56333a33e\\res\\layout-v21\\notification_action_tombstone.xml"
     },
     {
-        "merged": "O:\\MeoMeog\\android-master\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout-v21\\notification_template_custom_big.xml",
-        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-26.1.0.aar\\8120fcf75fb68b2bb03ddc6e108c3eba\\res\\layout-v21\\notification_template_custom_big.xml"
+        "merged": "C:\\Users\\Sherlcok\\Documents\\GitHub\\MeoMeog\\android-master\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout-v21\\notification_template_custom_big.xml",
+        "source": "C:\\Users\\Sherlcok\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-26.1.0.aar\\702132b1e1c2775445a1d3a56333a33e\\res\\layout-v21\\notification_template_custom_big.xml"
     },
     {
-        "merged": "O:\\MeoMeog\\android-master\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout-v21\\notification_action_tombstone.xml",
-        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-26.1.0.aar\\8120fcf75fb68b2bb03ddc6e108c3eba\\res\\layout-v21\\notification_action_tombstone.xml"
+        "merged": "C:\\Users\\Sherlcok\\Documents\\GitHub\\MeoMeog\\android-master\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout-v21\\notification_action.xml",
+        "source": "C:\\Users\\Sherlcok\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-26.1.0.aar\\702132b1e1c2775445a1d3a56333a33e\\res\\layout-v21\\notification_action.xml"
     },
     {
-        "merged": "O:\\MeoMeog\\android-master\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout-v21\\notification_template_icon_group.xml",
-        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-26.1.0.aar\\8120fcf75fb68b2bb03ddc6e108c3eba\\res\\layout-v21\\notification_template_icon_group.xml"
+        "merged": "C:\\Users\\Sherlcok\\Documents\\GitHub\\MeoMeog\\android-master\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout-v21\\notification_template_icon_group.xml",
+        "source": "C:\\Users\\Sherlcok\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-26.1.0.aar\\702132b1e1c2775445a1d3a56333a33e\\res\\layout-v21\\notification_template_icon_group.xml"
     }
 ]
