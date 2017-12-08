@@ -53,6 +53,8 @@ class curInput:
         self.longitude = longitude
         self.temperature = temperature
 
+        print(time, weather, latitude, longitude, temperature, "end")
+
         if time < 1100:
             self.date = 0
         elif time < 1400:
@@ -217,8 +219,6 @@ def getRecommRest(usrinfo, curinfo, rest_arr):
 
     return rest_arr[0:3]
 
-
-
 def init_score(rest_arr):
     for i in range(len(rest_arr)):
         rest_arr[i].setScore(0)
@@ -234,7 +234,7 @@ def accuraccy_test(rest_arr):
     count_n = 0 # counter for no
 
     for i in range(len(data)):
-        cur_info = [data[16], data[17], data[19], data[20], data[18]]
+        cur_info = [data[i][16], data[i][17], data[i][19], data[i][20], data[i][18]]
         user_input, cur_input, _ = parse(data[i][0:16], cur_info, [])
 
         init_score(rest_arr)
@@ -262,10 +262,6 @@ def accuraccy_test(rest_arr):
 
 
 
-
-
-
-
 if __name__ == "__main__":
     # test code
     pref = preference(4, 4, 5, 3, 5, 4, 3, 5, 5, 4, 5, 2)
@@ -276,8 +272,7 @@ if __name__ == "__main__":
     rest.append(restInfo(2, 5, 37.297716, 126.973346, 4.0, 3.0, 1100, 2100))
 
     loadWeightAndSaveToRest(rest)
-    result = []
-    result = accuraccy_test(rest)
+    accuraccy_test(rest)
 
     for restaurant in rest:
         print(restaurant.getScore())
