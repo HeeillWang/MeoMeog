@@ -51,7 +51,7 @@ class curInput:
         self.weather = weather
         self.latitude = latitude
         self.longitude = longitude
-        self.temperature = temperature
+        self.temperature = self.normalizer(temperature)
 
         if time < 1100:
             self.date = 0
@@ -74,6 +74,15 @@ class curInput:
 
     def getDate(self):
         return self.date
+
+    def getWeather(self):
+        return self.weather
+
+    def getTemperature(self):
+        return self.temperature
+
+    def normalizer(self, tem):
+        return (tem + 20) / 60
 
 
 class restInfo:
@@ -203,9 +212,12 @@ def getRecommRest(usrinfo, curinfo, rest_arr):
         # changed this line, need inspection later
         rest.addScore(rest.getWeight()[14] * -rest.getDistance() * (1 - 0.5 * usrinfo.pref_for_distance))
         # weather
+        rest.addScore(rest.getWeight()[22 + curinfo.getWeather()])
         # time
-        rest.addScore(rest.getWeight()[17 + curinfo.getDate()])
+        rest.addScore(rest.getWeight()[16 + curinfo.getDate()])
         # temperature
+        rest.addScore(rest.getWeight()[15] * curinfo.getTemperature())
+
         # if out of service time, flush that restaurant's score -1
         if (curinfo.getTime() < rest.getTime()[0]) or (curinfo.getTime() > rest.getTime()[1]):
             if rest.getTime()[0] == -1:
