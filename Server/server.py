@@ -141,26 +141,18 @@ class MyHandler(BaseHTTPRequestHandler):
             print restarr
         
         restdict = {}
-        rank = []
-        tmp = {}
-        tmp["1name"] = restarr[0].name
-        tmp["1cat"] = restarr[0].getCategory();
-        tmp["1score"] = restarr[0].getScore()
-        rank.append(tmp)
+        restdict["1name"] = restarr[0].name
+        restdict["1cat"] = restarr[0].getCategory()
+        restdict["1score"] = restarr[0].getScore()
         
-        tmp = {}
-        tmp["2name"] = restarr[1].name
-        tmp["2cat"] = restarr[1].getCategory();
-        tmp["2score"] = restarr[1].getScore()
-        rank.append(tmp)
+        restdict["2name"] = restarr[1].name
+        restdict["2cat"] = restarr[1].getCategory()
+        restdict["2score"] = restarr[1].getScore()
         
-        tmp = {}
-        tmp["3name"] = restarr[2].name
-        tmp["3cat"] = restarr[2].getCategory();
-        tmp["3score"] = restarr[2].getScore()
-        rank.append(tmp)
+        restdict["3name"] = restarr[2].name
+        restdict["3cat"] = restarr[2].getCategory()
+        restdict["3score"] = restarr[2].getScore()
             
-        restdict['rank'] = rank
         resultStr = json.dumps(restdict)
         
         if DEBUG:
