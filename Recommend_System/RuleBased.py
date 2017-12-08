@@ -205,16 +205,16 @@ def getRecommRest(usrinfo, curinfo, rest_arr):
 
     for rest in rest_arr:
         rest.setDistance((0, 0), (rest.getDistance() - minDist) / distDiff)
-        rest.addScore(rest.getWeight()[rest.getCategory()] * preference.getPreference(rest.getCategory()))
-        rest.addScore(rest.getWeight()[12] * rest.getUserRate())
-        rest.addScore(rest.getWeight()[13] * rest.getGlobalRate())
+        rest.addScore(rest.getWeight()[int(rest.getCategory())] * preference.getPreference(int(rest.getCategory())))
+        rest.addScore(rest.getWeight()[12] * int(rest.getUserRate()))
+        rest.addScore(rest.getWeight()[13] * int(rest.getGlobalRate()))
 
         # changed this line, need inspection later
         rest.addScore(rest.getWeight()[14] * -rest.getDistance() * (1 - 0.5 * usrinfo.pref_for_distance))
         # weather
-        rest.addScore(rest.getWeight()[22 + curinfo.getWeather()])
+        rest.addScore(rest.getWeight()[22 + int(curinfo.getWeather())])
         # time
-        rest.addScore(rest.getWeight()[16 + curinfo.getDate()])
+        rest.addScore(rest.getWeight()[16 + int(curinfo.getDate())])
         # temperature
         rest.addScore(rest.getWeight()[15] * curinfo.getTemperature())
 
@@ -243,7 +243,7 @@ def accuraccy_test(rest_arr):
     count_n = 0 # counter for no
 
     for i in range(len(data)):
-        cur_info = [data[i][16], data[i][17], data[i][19], data[i][20], data[i][18]]
+        cur_info = [int(data[i][16]), int(data[i][17]), data[i][19], data[i][20], data[i][18]]
         user_input, cur_input, _ = parse(data[i][0:16], cur_info, [])
 
         init_score(rest_arr)
