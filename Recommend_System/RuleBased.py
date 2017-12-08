@@ -53,8 +53,6 @@ class curInput:
         self.longitude = longitude
         self.temperature = self.normalizer(temperature)
 
-        print(time, weather, latitude, longitude, temperature, "end")
-
         if time < 1100:
             self.date = 0
         elif time < 1400:
@@ -207,16 +205,16 @@ def getRecommRest(usrinfo, curinfo, rest_arr):
 
     for rest in rest_arr:
         rest.setDistance((0, 0), (rest.getDistance() - minDist) / distDiff)
-        rest.addScore(rest.getWeight()[rest.getCategory()] * preference.getPreference(rest.getCategory()))
-        rest.addScore(rest.getWeight()[12] * rest.getUserRate())
-        rest.addScore(rest.getWeight()[13] * rest.getGlobalRate())
+        rest.addScore(rest.getWeight()[int(rest.getCategory())] * preference.getPreference(int(rest.getCategory())))
+        rest.addScore(rest.getWeight()[12] * int(rest.getUserRate()))
+        rest.addScore(rest.getWeight()[13] * int(rest.getGlobalRate()))
 
         # changed this line, need inspection later
-        rest.addScore(rest.getWeight()[14] * -rest.getDistance() * (1 - 0.5 * usrinfo.pref_for_distance))
+        rest.addScore(rest.getWeight()[14] * -rest.getDistance() * (1 - 0.2 * usrinfo.pref_for_distance))
         # weather
-        rest.addScore(rest.getWeight()[22 + curinfo.getWeather()])
+        rest.addScore(rest.getWeight()[22 + int(curinfo.getWeather())])
         # time
-        rest.addScore(rest.getWeight()[16 + curinfo.getDate()])
+        rest.addScore(rest.getWeight()[16 + int(curinfo.getDate())])
         # temperature
         rest.addScore(rest.getWeight()[15] * curinfo.getTemperature())
 
@@ -225,9 +223,13 @@ def getRecommRest(usrinfo, curinfo, rest_arr):
             if rest.getTime()[0] == -1:
                 continue
             else:
-                rest.setScore(-1)
+                rest.setScore(-10000)
 
     rest_arr = sorted(rest_arr, key=lambda restInfo:restInfo.score, reverse=True)
+
+    #print('start')
+    #for rest in rest_arr:
+    #    print(rest.getScore(),'and', rest.getDistance())
 
     return rest_arr[0:3]
 
@@ -237,7 +239,6 @@ def init_score(rest_arr):
 
 def accuraccy_test(rest_arr):
     loadWeightAndSaveToRest(rest_arr)
-
     data = np.loadtxt('survey.csv', delimiter=',',dtype=np.float32)
 
     correct_y = 0 # no. of correct 'yes'
@@ -246,7 +247,7 @@ def accuraccy_test(rest_arr):
     count_n = 0 # counter for no
 
     for i in range(len(data)):
-        cur_info = [data[i][16], data[i][17], data[i][19], data[i][20], data[i][18]]
+        cur_info = [int(data[i][16]), int(data[i][17]), data[i][19], data[i][20], data[i][18]]
         user_input, cur_input, _ = parse(data[i][0:16], cur_info, [])
 
         init_score(rest_arr)
@@ -261,12 +262,14 @@ def accuraccy_test(rest_arr):
                     correct_y += 1
         else:
             count_n += 1
+            flag = 1
             # survey respond is 'no'
             for j in range(len(result)):
                 if (ans == result[j].name):
+                    flag = 0
                     break;
 
-            if(j == len(result)):
+            if(flag == 1):
                 correct_n += 1
 
     print("[yes] Correct : ", correct_y, " / total : ", count_y)
@@ -279,12 +282,14 @@ if __name__ == "__main__":
     pref = preference(4, 4, 5, 3, 5, 4, 3, 5, 5, 4, 5, 2)
     user = userInput(1, 21, pref, 2, 4)
     cur = curInput(1544, 0, 37.293959, 126.974855, 20)
+    data = np.loadtxt("rest_info.csv", delimiter=",",dtype=np.float32, skiprows=1)
+
     rest = []
-    rest.append(restInfo(1, 4, 37.297195, 126.971490, 4.6, 3.0, 1100, 2100))
-    rest.append(restInfo(2, 5, 37.297716, 126.973346, 4.0, 3.0, 1100, 2100))
+
+    for i in range(len(data)):
+        rest.append(restInfo(int(data[i][0]), int(data[i][1]), data[i][2],data[i][3], data[i][4],0, data[i][5], data[i][6]))
+
 
     loadWeightAndSaveToRest(rest)
     accuraccy_test(rest)
 
-    for restaurant in rest:
-        print(restaurant.getScore())
