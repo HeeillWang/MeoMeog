@@ -25,7 +25,7 @@ weather_mapping = {"clear sky": 0,
                    "mist": 1 }
 
 ADDR = "10.0.2.15"
-PORT = 9999
+PORT = 13001
 class MyHandler(BaseHTTPRequestHandler):
     def _set_header(self):
         self.send_response(200)
@@ -44,6 +44,7 @@ class MyHandler(BaseHTTPRequestHandler):
         jsondata = form.getvalue('data')
         
         if DEBUG:
+            print form.getlist
             print jsondata
         
         decode_json = json.loads(jsondata)
